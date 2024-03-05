@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>พิพิธภัณฑ์</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script
+    src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.1.0/dist/aframe-physics-system.min.js"></script>
+</head>
+
+<body>
+  <a-scene physics="gravity: -9.8">
+    
+    <!--โมเดลไดโน-->
+    <a-assets timeout="10000">
+      <!-- Model source: https://sketchfab.com/3d-models/triceratops-d16aabe33dc24f8ab37e3df50c068265 -->
+      <!-- Model author: https://sketchfab.com/VapTor -->
+      <!-- Model license: Sketchfab Standard -->
+      <a-asset-item id="triceratops" src="https://cdn.aframe.io/examples/ar/models/triceratops/scene.gltf"
+        response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="sofa_2" src="sofa_2/scene.gltf"></a-asset-item>
+      <img id="shadow" src="shadow.png"></img>
+      <a-asset-item id="messageText" src="message.html"></a-asset-item>
+    </a-assets>
+    <!-- พื้น-->
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="60" height="60" color="#300504" static-body="shape:none"></a-plane>
+    <!--หลังคา-->
+    <a-box position="0 7.5 0" width="80" height="1" depth="40" color="#F2B882"></a-box>
+
+    <a-entity>
+      <!-- ผนังด้านหลัง -->
+      <a-box position="0 2 -20" width="40" height="10" depth="0.1" color="#b9261a" static-body="shape:box"></a-box>
+      <!-- ผนังขึ้นด้านล่าง -->
+      <a-box position="0 0.5 -20" width="40" height="1.8" depth="0.5" color="#F2B882" static-body="shape:box"></a-box>
+      <a-entity><!-- รูป 1 ของแตง -->
+        <a-box position="19.4 3.9 -2" rotation="0 90 0" width="4.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="19.2 3.9 -2" rotation="0 -90 0" width="4" height="3" material="src: assets/IMG_3839.JPG" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="19.2 2.1 -2" rotation="0 -90 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="19.2 2.1 -2" rotation="0 -90 0" align="center" value="Starry Night" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูป 2 ของแตง -->
+        <a-box position="19.4 3.9 4" rotation="0 -90 0" width="4.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="19.2 3.9 4" rotation="0 -90 0" width="4" height="3"material="src: assets/IMG_3840.JPG" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="19.2 2.1 4" rotation="0 -90 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="19.2 2.1 4" rotation="0 -90 0" align="center" value="The creation of Adam" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <!-- ผนังตรงข้ามไดโน -->
+      <a-box position="0 2 20" width="40" height="10" depth="0.1" color="#b9261a" static-body="shape:box"></a-box>
+      <!-- ผนังขึ้นด้านล่าง -->
+      <a-box position="0 0 20" width="40" height="2.8" depth="0.5" color="#F2B882" static-body="shape:box"></a-box> 
+
+      <a-entity><!-- รูป 3 ของแตง -->
+        <a-box position="13 3.9 -7.9" rotation="0 0 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="13 3.9 -7.7" rotation="0 0 0" width="3" height="3"material="src: assets/IMG_3841.JPG" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="13 2.1 -7.7" rotation="0 0 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="13 2.1 -7.5" rotation="0 0 0" align="center" value="Mona Lisa" color="#000" width="3w"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูป 4 ของแตง -->
+        <a-box position="6 3.9 -7.9" rotation="0 0 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="6 3.9 -7.7" rotation="0 0 0" width="3" height="3"material="src: assets/IMG_3842.JPG" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="6 2.1 -7.7" rotation="0 0 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="6 2.1 -7.5" rotation="0 0 0" align="center" value="The Scream" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <!-- ผนังข้าง -->
+      <a-box position="-20 2 0" width="0.1" height="10" depth="40" color="#b9261a" static-body="shape:box"></a-box>
+      <!-- ผนังขึ้นด้านล่าง -->
+      <a-box position="-20 0.5 0" width="0.5" height="1.8" depth="40" color="#F2B882" static-body="shape:box"></a-box>
+      
+      <a-entity><!-- รูป 5 ของแตง -->
+        <a-box position="5 3.9 19.9" rotation="0 -180 0" width="3.5" height="4" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="5 3.9 19.7" rotation="0 -180 0" width="3" height="3.5"material="src: assets/IMG_3844.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="5  1.9 19.7" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="5  1.9 19.7" rotation="0 -180 0" align="center" value="Madonna of the Pinks" color="#000" width="3"></a-text>
+      </a-entity>
+      
+      <a-entity><!-- รูป 6 ของแตง -->
+        <a-box position="-2 3.9 19.9" rotation="0 -180 0" width="3.5" height="4" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-2 3.9 19.7" rotation="0 -180 0" width="3" height="3.5"material="src: assets/IMG_3845.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-2 1.9 19.6" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-2 1.9 19.6" rotation="0 -180 0" align="center" value="David" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูป 7 ของแตง -->
+        <a-box position="-9 3.9 19.9" rotation="0 -180 0" width="3.5" height="4" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-9 3.9 19.7" rotation="0 -180 0" width="3" height="3.5"material="src: assets/IMG_3846.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-9 1.9 19.6" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-9 1.9 19.6" rotation="0 -180 0" align="center" value="Benois Madonna" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูป 7 ของแตง -->
+        <a-box position="-16 3.9 19.9" rotation="0 -180 0" width="3.5" height="4" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-16 3.9 19.6" rotation="0 -180 0" width="3" height="3.5"material="src: assets/IMG_3847.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-16 1.9 19.6" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-16 1.9 19.6" rotation="0 -180 0" align="center" value="Pieta" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <!-- ผนังตรงข้ามโซฟา -->
+      <a-box position="20 2 0" width="1" height="10" depth="40" color="#b9261a" static-body="shape:box"></a-box>
+      <!-- ผนังขึ้นด้านล่าง -->
+      <a-box position="19.9 0.5 0" width="1" height="1.8" depth="40.5" color="#F2B882" static-body="shape:box"></a-box>
+      <a-entity><!-- รูป 1 ของแอม -->
+        <a-box position="-20 3.9 16" rotation="0 90 0" width="4.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-19.8 3.9 16" rotation="0 90 0" width="4" height="3"material="src: assets/IA_1.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-19.8 2.1 16" rotation="0 90 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-19.8 2.1 16" rotation="0 90 0" align="center" value="The Raft of the Medusa" color="#000" width="3"></a-text>
+      </a-entity>
+      <a-entity><!-- รูป 2 ของแอม -->
+        <a-box position="-20 3.9 9" rotation="0 90 0" width="5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-19.8 3.9 9" rotation="0 90 0" width="4.5" height="3"material="src: assets/IA_2.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-19.8 2.1 9" rotation="0 90 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-19.8 2.1 9" rotation="0 90 0" align="center" value="Rob Gonsalves and the illusion" color="#000" width="3"></a-text>
+      </a-entity>
+      <a-entity><!-- รูป 3 ของแอม -->
+        <a-box position="-20 3.9 2" rotation="0 90 0" width="2.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-19.8 3.9 2" rotation="0 90 0" width="2" height="3"material="src: assets/IA_3.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-19.8 2.1 2" rotation="0 90 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-19.8 2.1 2" rotation="0 90 0" align="center" value="Portrait of the head of Christ" color="#000" width="3"></a-text>
+      </a-entity>
+      <a-entity><!-- รูป 4 ของแอม -->
+        <a-box position="-20 3.9 -5" rotation="0 90 0" width="5.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-19.8 3.9 -5" rotation="0 90 0" width="5" height="3"material="src: assets/IA_4.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-19.8 2.1 -5" rotation="0 90 0" width="1.3" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-19.8 2.1 -5" rotation="0 90 0" align="center" value="The Last Supper" color="#000" width="3"></a-text>
+      </a-entity>
+      <a-entity><!-- รูป 5 ของแอม -->
+        <a-box position="-20 3.9 -12" rotation="0 90 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-19.8 3.9 -12" rotation="0 90 0" width="3" height="3"material="src: assets/IA_5.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-19.8 2.1 -12" rotation="0 90 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-19.8 2.1 -12" rotation="0 90 0" align="center" value="The Persistence of Memory" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูป 6 แตงกวา  -->
+        <a-box position="-15 3.9 -19.9" rotation="0 0 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-15 3.9 -19.7" rotation="0 0 0" width="3" height="3"material="src: assets/IMG_3848.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-15 2.1 -19.6" rotation="0 0 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-15 2.1 -19.6" rotation="0 0 0" align="center" value="Michelangelo" color="#000" width="3"></a-text>
+      </a-entity>
+<!--TEST-->
+      <a-entity><!-- รูปว่าง  -->
+        <a-box position="-8 3.9 -19.9" rotation="0 0 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-8 3.9 -19.7" rotation="0 0 0" width="3" height="3"material="src: assets/1.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-8 2.1 -19.6" rotation="0 0 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-8 2.1 -19.6" rotation="0 0 0" align="center" value="Perfect day is when the soul smiles" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูปว่าง  -->
+        <a-box position="-1 3.9 -19.9" rotation="0 0 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-1 3.9 -19.7" rotation="0 0 0" width="3" height="3"material="src: assets/2.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-1 2.1 -19.6" rotation="0 0 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-1 2.1 -19.6" rotation="0 0 0" align="center" value="365 Days of Horror" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูปว่าง  -->
+        <a-box position="6 3.9 -19.9" rotation="0 0 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="6 3.9 -19.7" rotation="0 0 0" width="3" height="3"material="src: assets/3.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="6 2.1 -19.6" rotation="0 0 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="6 2.1 -19.6" rotation="0 0 0" align="center" value="Skeletons in an Embrace" color="#000" width="3"></a-text>
+      </a-entity>
+      
+      <a-entity><!-- รูปว่าง  -->
+        <a-box position="13 3.9 -19.9" rotation="0 0 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="13 3.9 -19.7" rotation="0 0 0" width="3" height="3"material="src: assets/4.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="13 2.1 -19.6" rotation="0 0 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="13 2.1 -19.6" rotation="0 0 0" align="center" value="Romeo & Juliet" color="#000" width="3"></a-text>
+      </a-entity>
+      
+      <a-entity><!-- รูปว่าง  -->
+        <a-box position="19.4 3.9 -13.5" rotation="0 -90 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="19.2 3.9 -13.5" rotation="0 -90 0" width="3" height="3"material="src: assets/5.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="19.2 2.1 -13.6" rotation="0 -90 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="19.2 2.1 -13.6" rotation="0 -90 0" align="center" value="Christian Larsson - Unshaken" color="#000" width="3"></a-text>
+      </a-entity>
+      
+      <a-entity><!-- รูปว่าง  -->
+        <a-plane position="13 3.9 -8.1" rotation="0 -180 0" width="3" height="3"material="src: assets/6.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="13 2.1 -8.1" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="13 2.1 -8.1" rotation="0 -180 0" align="center" value="Nikos Gyftakis." color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูปว่าง  -->
+        <a-plane position="6 3.9 -8.1" rotation="0 -180 0" width="3" height="3"material="src: assets/7.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="6 2.1 -8.1" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="6 2.1 -8.1" rotation="0 -180 0" align="center" value="Marius Matukas" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <a-entity><!-- รูปว่าง -->
+        <a-box position="-1 3.9 -8.1" rotation="0 -180 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-1 3.9 -8.3" rotation="0 -180 0" width="3" height="3"material="src: assets/8.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-1 2.1 -8.4" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-1 2.1 -8.4" rotation="0 -180 0" align="center" value="godspeed archive " color="#000" width="3"></a-text>
+      </a-entity>
+      
+      <a-entity><!-- รูปว่าง -->
+        <a-box position="-8 3.9 -8.1" rotation="0 -180 0" width="3.5" height="3.5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+        <a-plane position="-8 3.9 -8.3" rotation="0 -180 0" width="3" height="3"material="src: assets/9.jpg" static-body="shape:plane"></a-plane>
+        <!-- แผ่นป้าย -->
+        <a-plane position="-8 2.1 -8.4" rotation="0 -180 0" width="2" height="0.3" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="-8 2.1 -8.4" rotation="0 -180 0" align="center" value="lil uzi vert mood" color="#000" width="3"></a-text>
+      </a-entity>
+
+      <!-- ที่ตั้งไดโน -->
+      <a-box position="0 0 0" width="7" height="0.5" depth="13" color="#F2B882" dynamic-body></a-box>
+
+      <!-- โมเดลตรงกลาง -->
+      <a-box position="-9 2 0" width="13" height="10" depth="16" color="#b9261a" static-body="shape: box"></a-box>
+      <!-- โมเดลตรงกลาง -->
+      <a-box position="-9 3.5 8" width="9" height="5" depth="0.3" color="#8B4513" static-body="shape: box"></a-box>
+
+      <!--เวที-->
+      <a-entity>
+        <!-- แผ่นป้าย -->
+        <a-plane position="13 1 13" rotation="0 -130 0" width="2" height="0.5" color="#ffffff" opacity="0.8"
+          static-body="shape:box"></a-plane>
+        <!-- ข้อความ -->
+        <a-text position="13 1 13" rotation="0 -130 0"align="center" value="The thinker" color="#000" width="7"></a-text>
+      <a-cylinder position="15 0 15" radius="3.5" height="0.5" color="#F2B882" dynamic-body></a-cylinder>
+
+      <!-- โมเดล -->
+      <a-entity position="0 0.3 0" gltf-model="#triceratops" scale="0.05 0.05 0.05" dynamic-body></a-entity>
+      <!-- เพิ่มโมเดลที่นี่ -->
+      <!-- sofa -->
+      <a-gltf-model id="sofa_2" src="#sofa_2" position="-18.7 0 16" rotation="0 90 0"
+        animation-mixer="" scale="0.004 0.004 0.004" visible="" gltf-model="">
+      </a-gltf-model>
+      <a-gltf-model src="https://p.turbosquid.com/ts-thumb/21/FSR9fb/xv/00/jpg/1663936260/1920x1080/fit_q87/e76e652fdfe9ec43bbf660af99299934982f41ad/00.jpg"
+        scale="0.1 0.1 0.1" dynamic-body></a-gltf-model>
+      <!--the thinker-->
+      <!-- animation -->
+      <a-box position="12 6 17" rotation="0 45 0" animation__rotation="property: rotation; to: 0 360 0; loop: true; dur: 5000"></a-box>
+      <a-box position="17 6 12" rotation="0 45 0" animation__rotation="property: rotation; to: 0 360 0; loop: true; dur: 5000"></a-box>
+      <a-entity  gltf-model="assets/thinker/scene.gltf"  position="15 0 15" rotation = "0 -70 0" scale="3 3 3"></a-entity>
+      
+      <a-entity gltf-model="assets/canopic-jar/scene.gltf" position="-4 0 9" rotation = "0 20 0" scale="0.1 0.1 0.1">
+        
+      </a-entity>
+      
+    </a-entity>
+    <!--ผนังหลังไดโนเสาอรื-->
+    <!-- ผนังตรงกลาง -->
+    <a-box position="10 0 -7.9" width="25" height="14" depth="0.1" color="#b9261a" static-body="shape:box"></a-box>
+    <a-box position="10 0 -8" width="51" height="2.8" depth="0.4" color="#F2B882" static-body="shape:box"></a-box>
+
+    <a-entity>
+      <!-- แผ่นป้าย -->
+      <a-plane position="0.3 1 6" rotation="0 0 0" width="2" height="0.5" color="#ffffff" opacity="0.8"
+        static-body="shape:box"></a-plane>
+
+      <!-- ข้อความ -->
+      <a-text position="0.3 1 6" align="center" value="Triceratops" color="#000" width="7"></a-text>
+    </a-entity>
+    </a-entity>
+    </a-entity>
+    <a-entity camera position="0 2 15" look-controls wasd-controls=""></a-entity>
+    <a-entity position="0 1.5 -2">
+      <!-- แผ่นป้าย -->
+      <a-plane position="0 2 0" rotation="-90 0 0" width="3" height="1.5" color="#555" opacity="0.8"
+        static-body="shape:box"></a-plane>
+      <!-- ข้อความบนแผ่นป้าย -->
+      <a-text position="0 2.2 0.1" align="center" value="จอทีวี" color="#F2B882"></a-text>
+
+      <!-- วิดีโอที่จะเล่น -->
+    </a-entity>
+    <!--จอ-->
+    
+    <a-video src="video/Classical_Music.mp4" position="-9 3.5 8.2" src="#" width="8.4" height="4.2" position="0 2 0.1" autoplay="true" loop="true"></a-video>
+    <!--TEST-->
+    <!--Model 3D-->
+
+  </a-scene>
+</body>
+
+</html>
